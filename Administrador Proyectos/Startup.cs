@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Administrador_Proyectos.Data;
 
 namespace Administrador_Proyectos
 {
@@ -33,6 +35,9 @@ namespace Administrador_Proyectos
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<Administrador_ProyectosContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Administrador_ProyectosContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
