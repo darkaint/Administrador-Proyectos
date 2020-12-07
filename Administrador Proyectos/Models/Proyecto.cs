@@ -19,6 +19,7 @@ namespace Administrador_Proyectos.Models
         [Required]
         [StringLength(50)]
         public string Nombre { get; set; }
+        public ICollection<HistoriaUsuario> HistoriaUsuarios { get; set; }
         
     }
 }

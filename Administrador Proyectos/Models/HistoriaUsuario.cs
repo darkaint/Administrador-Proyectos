@@ -8,7 +8,7 @@ namespace Administrador_Proyectos.Models
 {
     public class HistoriaUsuario
     {
-        public int Id { get; set }
+        public int Id { get; set; }
         public int ProyectoID { get; set; }
         public Proyecto Proyecto { get; set; }
         [Required]
