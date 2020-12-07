@@ -1,39 +1,35 @@
 ﻿@model Administrador_Proyectos.Models.CompañiaUsuario
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Agregar Disponibilidad";
 }
 
-<h2>Create</h2>
+<h2>Agregar Disponibilidad</h2>
 
-<h4>CompañiaUsuario</h4>
+<h4>Escoja el usuario que quiere que este disponible </h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="CompañiaID" class="control-label"></label>
+                <label asp-for="CompañiaID" class="control-label">Compañia</label>
                 <select asp-for="CompañiaID" class ="form-control" asp-items="ViewBag.CompañiaID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="UsuarioID" class="control-label"></label>
+                <label asp-for="UsuarioID" class="control-label">Usuario</label>
                 <select asp-for="UsuarioID" class ="form-control" asp-items="ViewBag.UsuarioID"></select>
             </div>
+            
             <div class="form-group">
-                <label asp-for="FechaAsignacion" class="control-label"></label>
-                <input asp-for="FechaAsignacion" class="form-control" />
-                <span asp-validation-for="FechaAsignacion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Agregar" class="btn btn-default" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Volver a la lista.</a>
 </div>
 
 @section Scripts {

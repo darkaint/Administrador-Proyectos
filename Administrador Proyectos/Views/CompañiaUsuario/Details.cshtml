@@ -14,13 +14,13 @@
             @Html.DisplayNameFor(model => model.Compañia)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Compañia.Direccion)
+            @Html.DisplayFor(model => model.Compañia.Nombre)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Usuario)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Usuario.Apellido)
+            @Html.DisplayFor(model => model.Usuario.Nombre)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.FechaAsignacion)
@@ -32,5 +32,5 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Volver a la lista.</a>
 </div>

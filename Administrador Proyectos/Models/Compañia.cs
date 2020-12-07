@@ -20,7 +20,7 @@ namespace Administrador_Proyectos.Models
         public string Direccion { get; set; }        
         [StringLength(50)]
         [Display(Name = "Correo Electronico")]
-        [RegularExpression(@"^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")]
+        [EmailAddress]
         public string CorreoElectronico { get; set; }
         public ICollection<Proyecto> Proyectos { get; set; }
     }

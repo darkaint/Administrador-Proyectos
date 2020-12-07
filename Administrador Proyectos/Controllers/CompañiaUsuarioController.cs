@@ -49,8 +49,8 @@ namespace Administrador_Proyectos.Controllers
         // GET: CompañiaUsuario/Create
         public IActionResult Create()
         {
-            ViewData["CompañiaID"] = new SelectList(_context.Compañia, "Id", "Direccion");
-            ViewData["UsuarioID"] = new SelectList(_context.Set<Usuario>(), "Id", "Apellido");
+            ViewData["CompañiaID"] = new SelectList(_context.Compañia, "Id", "Nombre");
+            ViewData["UsuarioID"] = new SelectList(_context.Set<Usuario>(), "Id", "Nombre");
             return View();
         }
 
@@ -59,16 +59,17 @@ namespace Administrador_Proyectos.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CompañiaID,UsuarioID,FechaAsignacion")] CompañiaUsuario compañiaUsuario)
+        public async Task<IActionResult> Create([Bind("Id,CompañiaID,UsuarioID")] CompañiaUsuario compañiaUsuario)
         {
             if (ModelState.IsValid)
             {
+                compañiaUsuario.FechaAsignacion = DateTime.Now;
                 _context.Add(compañiaUsuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CompañiaID"] = new SelectList(_context.Compañia, "Id", "Direccion", compañiaUsuario.CompañiaID);
-            ViewData["UsuarioID"] = new SelectList(_context.Set<Usuario>(), "Id", "Apellido", compañiaUsuario.UsuarioID);
+            ViewData["CompañiaID"] = new SelectList(_context.Compañia, "Id", "Nombre", compañiaUsuario.CompañiaID);
+            ViewData["UsuarioID"] = new SelectList(_context.Set<Usuario>(), "Id", "Nombre", compañiaUsuario.UsuarioID);
             return View(compañiaUsuario);
         }
 
@@ -85,8 +86,8 @@ namespace Administrador_Proyectos.Controllers
             {
                 return NotFound();
             }
-            ViewData["CompañiaID"] = new SelectList(_context.Compañia, "Id", "Direccion", compañiaUsuario.CompañiaID);
-            ViewData["UsuarioID"] = new SelectList(_context.Set<Usuario>(), "Id", "Apellido", compañiaUsuario.UsuarioID);
+            ViewData["CompañiaID"] = new SelectList(_context.Compañia, "Id", "Nombre", compañiaUsuario.CompañiaID);
+            ViewData["UsuarioID"] = new SelectList(_context.Set<Usuario>(), "Id", "Nombre", compañiaUsuario.UsuarioID);
             return View(compañiaUsuario);
         }
 
@@ -122,8 +123,8 @@ namespace Administrador_Proyectos.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CompañiaID"] = new SelectList(_context.Compañia, "Id", "Direccion", compañiaUsuario.CompañiaID);
-            ViewData["UsuarioID"] = new SelectList(_context.Set<Usuario>(), "Id", "Apellido", compañiaUsuario.UsuarioID);
+            ViewData["CompañiaID"] = new SelectList(_context.Compañia, "Id", "Nombre", compañiaUsuario.CompañiaID);
+            ViewData["UsuarioID"] = new SelectList(_context.Set<Usuario>(), "Id", "Nombre", compañiaUsuario.UsuarioID);
             return View(compañiaUsuario);
         }
 

@@ -12,9 +12,9 @@ namespace Administrador_Proyectos.Models
         public int CompañiaID { get; set; }
         public int UsuarioID { get; set; }
         public Compañia Compañia { get; set; }
-        public Usuario Usuario { get; set; }
-        [StringLength(50)]
-        [Display(Name = "Correo Electronico")]
+        public Usuario Usuario { get; set; }        
+        [Display(Name = "Fecha de Asignacion")]
+        [DataType(DataType.Date)]
         public DateTime FechaAsignacion { get; set; }
     }
 }
