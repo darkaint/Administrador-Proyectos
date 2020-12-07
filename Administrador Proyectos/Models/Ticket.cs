@@ -9,7 +9,7 @@ namespace Administrador_Proyectos.Models
     public class Ticket
     {
         public int Id { get; set; }        
-        public int UsuarioID { get; set; }        
+        //public int UsuarioID { get; set; }        
         public int HistoriaUsuarioID { get; set; }        
         public Usuario Usuario { get; set; }
         public HistoriaUsuario HistoriaUsuario { get; set; }        

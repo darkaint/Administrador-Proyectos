@@ -23,8 +23,7 @@ namespace Administrador_Proyectos.Models
         public string Documento { get; set; }
         [Required]
         [StringLength(50)]
-        public string Password { get; set; }
-        public ICollection<Ticket> Tickets { get; set; }
+        public string Password { get; set; }        
         public enum Tipo
         {
             Cedula,
